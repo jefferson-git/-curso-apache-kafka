@@ -29,12 +29,11 @@ public class StringConsumerConfig {
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, String> srtContainerFactory(
+    public ConcurrentKafkaListenerContainerFactory<String, String> strContainerFactory(
             ConsumerFactory<String, String> consumerFactory
-    )
-    {
+    ) {
         var factory = new ConcurrentKafkaListenerContainerFactory<String, String>();
-        factory.setConsumerFactory(consumerFactory());
+        factory.setConsumerFactory(consumerFactory);
         return factory;
     }
 }
